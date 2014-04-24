@@ -1,0 +1,12 @@
+{
+  "name": "namespace",
+  "version": "1.0.0",
+  "homepage": "https://github.com/lokalebasen/javascript_namespace",
+  "main": "namespace.coffee",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "README.md",
+    "dummy.html"
+  ]
+}
