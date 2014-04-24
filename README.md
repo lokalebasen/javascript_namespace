@@ -1,6 +1,4 @@
 # javascript_namespace
-*A rails asset gem*
-
 
 JavaScript has no native support for anything resembling namespacing or packaging. To avoid cluttering up the global object with everything, but the kitchen sink, developers tend to create (often nested) application objects and attach them to the global object, `window`.
 
@@ -34,6 +32,10 @@ By default `namespace` will augment the `window object`, but if you want to augm
 
 ### How to use
 
-Add `javascript_namespace` to your Gemfile and require namespace in your JavaScript manifest. Add this line to your application.js file:
+Add the following line to your Bowerfile
 
-    //= require namespace
+    asset "memojs", "git@github.com:lokalebasen/memojs.git"
+
+and require namespace in your JavaScript manifest. Add this line to your application.js file:
+
+    //= require namespace/namespace
