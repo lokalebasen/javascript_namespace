@@ -34,7 +34,7 @@ By default `namespace` will augment the `window object`, but if you want to augm
 
 Add the following line to your Bowerfile
 
-    asset "memojs", "git@github.com:lokalebasen/memojs.git"
+    asset "namespace", "git@github.com:lokalebasen/javascript_namespace.git"
 
 and require namespace in your JavaScript manifest. Add this line to your application.js file:
 
