@@ -1,41 +1,29 @@
-# javascript_namespace
+# JavascriptNamespace
 
-JavaScript has no native support for anything resembling namespacing or packaging. To avoid cluttering up the global object with everything, but the kitchen sink, developers tend to create (often nested) application objects and attach them to the global object, `window`.
+TODO: Write a gem description
 
-However, these can be sort of brittle, because you have to define parent nodes prior to leaf nodes, which can break your code if you don't have the right load order.
+## Installation
 
-    myapp.domain.prototypes.User = /* a constructor function for User objects */
+Add this line to your application's Gemfile:
 
-will break unless `myapp`, `domain` and `prototypes` have all been sequentially declared prior to loading and defining `User`.
+    gem 'javascript_namespace'
 
-This sucks and leads uncertain developers to write code that checks if parent branches are defined before defining the leaf node which is what matters.
+And then execute:
 
-This library solves that nuisance.
+    $ bundle
 
-    parent = namespace('myapp.domain.prototypes');
-    parent.User = /* a constructor function for User objects */
-    some_user = new myapp.domain.prototypes.User("Niels");
+Or install it yourself as:
 
-The cool thing here is that parent nodes do not need to be defined. If any nodes in the path are missing, they will be defined with an empty object and then augmented with the next node in the path. If any node in the namespace path is not an object, an error will be thrown.
+    $ gem install javascript_namespace
 
-    window.myapp.the_game = "you just lost it"
-    utils = namespace('myapp.the_game.utils')
+## Usage
 
-    => "Namespace error! Augmentation not allowed for non-objects. 'myapp.the_game'
-       is a type of string. Namespace 'my_app.the_game.utils' could not be defined."
+TODO: Write usage instructions here
 
-By default `namespace` will augment the `window object`, but if you want to augment something else, you can pass it in as the second argument.
+## Contributing
 
-    namespace('some.new.stuff', my_object)
-    my_object.some.new.stuff
-    => {}
-
-### How to use
-
-Add the following line to your Bowerfile
-
-    asset "namespace", "git@github.com:lokalebasen/javascript_namespace.git"
-
-and require namespace in your JavaScript manifest. Add this line to your application.js file:
-
-    //= require namespace/namespace
+1. Fork it ( http://github.com/<my-github-username>/javascript_namespace/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
